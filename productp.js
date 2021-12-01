@@ -12,15 +12,14 @@ function showpaint(painting) {
   //clont it
   const copy = template.cloneNode(true);
   //???
-  copy.querySelector(".img-display-page").src =
-    painting._links["wp:featuredmedia"][0].source_url;
+  copy.querySelector(".img-display-page").src = painting.photo.guid;
   //copy.querySelector(".img-display-page").src = painting.photo[0].guid;
   //bags._links["wp:featuredmedia"][0].href;
   copy.querySelector(".name").textContent = `${painting.title.rendered}`;
   copy.querySelector(".price").textContent = `${painting.price}` + " DDK";
   copy.querySelector(".descripition").textContent = `${painting.description}`;
   //grab parent
-  const parent = document.querySelector(".product-list");
+  const parent = document.querySelector(".product-page");
   console.log(parent);
   //append
   parent.appendChild(copy);
