@@ -10,12 +10,12 @@ fetch("http://tolloman.com/mmd21ex/wp-json/wp/v2/categories?_fields=name")
   });
 
 function handleBreadCrumbs(data) {
-  // console.log(data);
+  console.log(data);
   data.forEach(showCate);
 }
 
 function showCate(painting) {
-  console.log(painting.name);
+  //console.log(painting.name);
   const template = document.querySelector(".catetemp").content;
   const copy = template.cloneNode(true);
   copy.querySelector("a.cate-link").textContent = painting.name;
@@ -24,22 +24,6 @@ function showCate(painting) {
     .setAttribute("href", "productp.html?_fields=" + painting.name);
   const parent = document.querySelector(".menu-op");
   parent.appendChild(copy);
-}
-// filtering
-window.addEventListener("DOMContentLoaded", init);
-
-function init() {
-  const allbtns = document.querySelectorAll(".cate-like");
-  allbtns.forEach((btn) => {
-    //console.log(btn);
-    btn.addEventListener("click", changeUrl);
-  });
-}
-function changeUrl(event) {
-  event.preventDefault();
-  const filter = event.target.dataset.painting.name;
-  //console.log(filter);
-  location.href = "productp.html?_fields=" + filter;
 }
 
 fetch(
