@@ -1,0 +1,22 @@
+.mainlist {
+  display: flex;
+}
+.cate-menu {
+  font-weight: bold;
+  list-style-type: none;
+  display: inline-block;
+}
+.cate-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+}
+.product-list {
+  padding: 5vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
