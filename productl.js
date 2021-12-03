@@ -21,7 +21,7 @@ function showCate(painting) {
   copy.querySelector("a.cate-link").textContent = painting.name;
   copy
     .querySelector("a.cate-link")
-    .setAttribute("href", "productp.html?_fields=" + painting.name);
+    .setAttribute("href", "product-list.html?_fields=" + painting.name);
   const parent = document.querySelector(".menu-op");
   parent.appendChild(copy);
 }
