@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
-const brandname = urlParams.get("name");
+const catid = urlParams.get("id");
 
-fetch("http://tolloman.com/mmd21ex/wp-json/wp/v2/categories?_fields=name")
+fetch("http://tolloman.com/mmd21ex/wp-json/wp/v2/painting?categories=" + catid)
   .then(function (res) {
     return res.json();
   })
@@ -21,7 +21,10 @@ function showCate(painting) {
   copy.querySelector("a.cate-link").textContent = painting.name;
   copy
     .querySelector("a.cate-link")
-    .setAttribute("href", "product-list.html?_fields=" + painting.name);
+    .setAttribute(
+      "href",
+      "product-list.html?categories=" + painting.categories[0]
+    );
   const parent = document.querySelector(".menu-op");
   parent.appendChild(copy);
 }
